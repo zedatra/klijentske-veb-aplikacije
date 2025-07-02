@@ -21,12 +21,14 @@ export class Login {
   constructor(private router: Router){
 
 
+
+
   }
 
   public doLogin(){
     if (UserService.login(this.email, this.password)){
-      //redirect to user component
-     this.router.navigate([' /about ']) 
+      //redirect to user to profile
+     this.router.navigate(['/user']) 
      return
 
     }
