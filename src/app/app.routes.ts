@@ -4,6 +4,7 @@ import { About } from './about/about';
 import {Search} from './search/search';
 import { Theater } from './theater/theater';
 import { Details } from './details/details';
+import { Login } from './login/login';
 
 export const routes: Routes = [
     {path: '', component: Home},
@@ -11,5 +12,6 @@ export const routes: Routes = [
     {path: 'search', component: Search},
     {path: 'theaters', component: Theater },
     {path: 'details/:id', component: Details},
+    {path: 'login', component: Login},
     {path: '**', redirectTo: ''}
 ];
