@@ -1,15 +1,91 @@
 
-<div *ngIf="error">
+<!--<div *ngIf="error">
     <h3>Ooops, an error occured!</h3>
     <p style="color: red;">{{error}}</p>
 </div>
 
-<div *ngIf="filmovi">
+<div *ngIf="filmovi" class="container">
+    <mat-card class="example-card" appearance="outlined">
+  <img mat-card-image src="https://material.angular.dev/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+  <mat-card-content>
+    <h1>{{FilmModel.original_title}}</h1>
+    <p>Vreme polaska</p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button matButton>LIKE</button>
+    <button matButton>SHARE</button>
+  </mat-card-actions>
+</mat-card>
+<mat-card class="example-card" appearance="outlined">
+  <img mat-card-image src="https://material.angular.dev/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+  <mat-card-content>
+    <h1>Picka</h1>
+    <p>Vreme polaska</p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button matButton>LIKE</button>
+    <button matButton>SHARE</button>
+  </mat-card-actions>
+</mat-card>
+<mat-card class="example-card" appearance="outlined">
+  <img mat-card-image src="https://material.angular.dev/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+  <mat-card-content>
+    <h1>Picka</h1>
+    <p>Vreme polaska</p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button matButton>LIKE</button>
+    <button matButton>SHARE</button>
+  </mat-card-actions>
+</mat-card>
+
+
     <p *ngFor="let film of filmovi">{{film.id}} {{film.original_title}}  {{film.release_date}} {{film.vote_average}}</p>
-    <pre>{{filmovi | json}}</pre>
+    <pre>{{filmovi | json}}</pre>  
 </div>
 
 <div *ngIf="filmovi && !error">
     <p>podaci se ucitavaju</p>
+</div> -->
+
+
+
+
+
+
+<div *ngIf="error">
+  <h3>Ooops, an error occurred!</h3>
+  <p style="color: red;">{{ error }}</p>
 </div>
 
+<div *ngIf="filmovi" class="container">
+  <div *ngFor="let film of filmovi">
+    <mat-card class="example-card" appearance="outlined">
+      <img mat-card-image [src]="'https://image.tmdb.org/t/p/w500' + film.poster_path" [alt]="film.title">
+      <mat-card-content>
+        <h2>{{ film.original_title }}</h2>
+        <p>{{ film.release_date}} | Ocena: {{ film.vote_average }}</p>
+<!----        <p>{{ formatDate.(film.release_date)}} | Ocena: {{ film.vote_average }}</p> -->
+        <p>{{ film.overview }}</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <a mat-button [routerLink]="['/details/', film.id]">
+          <i class="fa-solid fa-circle-info"></i> Details 
+        </a>
+        <button mat-button color="accent">
+          <i class="fa-solid fa-arrow-up-right-from-square"></i> Book Now</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>
+
+<!-- Napraviti loading     -->
+<div *ngIf="!filmovi && !error" class ="containter">
+    <mat-card class="loading" appearance="outlined">
+      <mat-card-content>
+       <h1>Please wait!</h1>
+       <p>We are processing your data!</p> 
+      </mat-card-content>
+    </mat-card>
+  <p>Podaci se učitavaju...</p>
+</div>

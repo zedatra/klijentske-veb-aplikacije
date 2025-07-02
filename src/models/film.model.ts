@@ -15,3 +15,11 @@ export interface FilmModel {
   vote_average: number;
   vote_count: number;
 }
+
+//export interface FilmApiResponse {
+//  page: number;
+//  results: FilmModel[];
+//  total_pages: number;
+//  total_results: number;
+//}
+
