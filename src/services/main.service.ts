@@ -7,7 +7,7 @@ const client = axios.create({
         'X-Client-Name': 'KVA/2025'
     },
     validateStatus: (status: number) => {
-        return status === 200 //Samo ako je 200 vrati response, u ostalim slucajevima baci izuzetak
+        return status === 200 
     }
 })
 

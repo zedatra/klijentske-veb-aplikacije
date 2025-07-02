@@ -1,0 +1,54 @@
+<div class = "wrapper">
+    <mat-card class="booknow-card" appearance="outlined">
+      <img mat-card-image [src]="'https://image.tmdb.org/t/p/w500' + film?.poster_path" alt="{{film?.title}}">
+      
+      <mat-card-content>
+        <h3>New order - {{film?.title}}</h3>
+        <mat-form-field class="full-width">
+        <mat-label>Movie title</mat-label>
+        <input type="text" matInput [value]="film?.title" disabled>
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <mat-label>Rating</mat-label>
+        <input type="text" matInput [value]="film?.vote_average" disabled>
+      </mat-form-field>
+      <mat-form-field class = "full-width">
+        <mat-label>Movie theater</mat-label>
+        <mat-select>
+        <mat-option *ngFor="let theater of theaters" [value]="theater">{{theater.name}}</mat-option>
+      </mat-select>
+      </mat-form-field>
+
+      <mat-form-field class = "full-width">
+        <mat-label>Choose seats</mat-label>
+        <mat-select [(value)]="selectedPrice" (selectionChange)="updateTotalPrice()">
+        <mat-option [value]="15">Normal seats - 15 &euro;</mat-option>
+        <mat-option [value]="20">Leather seats - 20 &euro;</mat-option>
+        <mat-option [value]="30">Massaging seats - 30 &euro;</mat-option>
+      </mat-select>
+      </mat-form-field>
+
+      
+
+
+
+      <mat-form-field class="full-width">
+  <mat-label>Ticket count</mat-label>
+  <input type="number" matInput [(ngModel)]="selectedTicketCount" (ngModelChange)="updateTotalPrice()" />
+</mat-form-field>
+<div class="price-display">
+  <strong>Total price: {{ totalPrice }} €</strong>
+</div>
+
+
+      
+
+      </mat-card-content>
+
+      <mat-card-actions class="button-center">
+        <button mat-button color="accent" (click) = "doBooknow()">
+           <i class="fa-solid fa-cart-shopping"></i> Book Now
+        </button>
+      </mat-card-actions>
+    </mat-card>
+</div>

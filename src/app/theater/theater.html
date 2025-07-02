@@ -3,7 +3,7 @@
   <h1>Theaters</h1>
   <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
-  <!-- ID -->
+
   <ng-container matColumnDef="id">
     <th mat-header-cell *matHeaderCellDef> 
       <i class="fa-solid fa-hashtag"></i>  ID 
@@ -11,7 +11,7 @@
     <td mat-cell *matCellDef="let element"> {{element.id}} </td>
   </ng-container>
 
-  <!-- Naslov -->
+
   <ng-container matColumnDef="name">
     <th mat-header-cell *matHeaderCellDef> 
       <i class="fa-solid fa-masks-theater"></i> | Name
@@ -26,7 +26,7 @@
     <td mat-cell *matCellDef="let element"> {{element.countryOfOrigin}} </td>
   </ng-container>
 
-  <!-- Ocena -->
+
   <ng-container matColumnDef="website">
     <th mat-header-cell *matHeaderCellDef> 
       <i class="fa-solid fa-link"></i> | Website
@@ -42,7 +42,7 @@
         <i class="fa-solid fa-arrow-up-right-from-square"></i>Visit Website
       </a>
         
-<!-- mozemo da stilizujemo buttone-->
+
   </ng-container>
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

@@ -1,8 +1,9 @@
 export interface OrderModel{
     filmId: number
-        pricePerItem: string
+        pricePerItem: number
         title: string
         count: number
         status: 'ordered' | 'paid' | 'cancelled',
         rating: null | number
+        theater: string
 }

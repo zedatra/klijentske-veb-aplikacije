@@ -14,7 +14,7 @@ body {
     font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
- /* Da centriramo container za loading */
+
 .container {
     margin-top: 30px;
     display: flex;

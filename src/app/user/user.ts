@@ -18,7 +18,6 @@ export class User {
 
   constructor(private router: Router){
     if(!UserService.getActiveUser()){
-      //Vrati na home page
       router.navigate(['/home'])
       return
     }

@@ -7,7 +7,6 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import { RouterLink } from '@angular/router';
 
-// Sklonio je JsonPipe iz importsa! Da zapamtimo!
 
 @Component({
   selector: 'app-home',
