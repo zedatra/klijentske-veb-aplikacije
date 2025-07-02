@@ -7,12 +7,12 @@
     <mat-card-content>
       <mat-form-field class="full-width">
         <mat-label>E-mail</mat-label>
-        <input type="text" placeholder="Input your e-mail....." (change)="updateEmail($event)">
+        <input type="text" placeholder="Input your e-mail....."  [(ngModel)] = "email">
       </mat-form-field>
 
       <mat-form-field class="full-width">
         <mat-label>Password</mat-label>
-        <input type="password" placeholder="Input Your password...."(change)="updatePassword($event)">
+        <input type="password" placeholder="Input Your password...." [(ngModel)] = "password">
       </mat-form-field>
     </mat-card-content>
     <mat-card-actions>

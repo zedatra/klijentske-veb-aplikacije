@@ -4,6 +4,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { UserService } from '../../services/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -16,14 +18,20 @@ export class Login {
   public email: string = ''
   public password: string = ''
 
-  public updateEmail(e: any){
-    this.email = e.target.value
+  constructor(private router: Router){
+
+
   }
-  public updatePassword(e: any){
-    this.password = e.target.value
-  }
+
   public doLogin(){
-    alert('Nemaaaaaa??!!?!?!')
+    if (UserService.login(this.email, this.password)){
+      //redirect to user component
+     this.router.navigate([' /about ']) 
+     return
+
+    }
+
+    alert('Bad email or password')
   }
 
 
